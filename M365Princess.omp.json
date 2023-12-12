@@ -1,0 +1,106 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "foreground": "#ffffff",
+          "background": "#cc3802",
+          "template": "{{ if .Env.PNPPSHOST }} \uf8c5 {{ .Env.PNPPSHOST }} {{ end }}"
+        },
+        {
+          "type": "text",
+          "style": "powerline",
+          "foreground": "#ffffff",
+          "background": "#047e84",
+          "powerline_symbol": "\ue0b0",
+          "template": "{{ if .Env.PNPPSSITE }} \uf2dd {{ .Env.PNPPSSITE }}{{ end }}"
+        },
+        {
+          "type": "text",
+          "style": "diamond",
+          "trailing_diamond": "\ue0b4",
+          "foreground": "#ffffff",
+          "background": "#047e84",
+          "template": "{{ if .Env.PNPPSSITE }}\u00A0{{ end }}"
+        }
+      ],
+      "type": "rprompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "shell",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "foreground": "#ffffff",
+          "background": "#eb794f",
+          "properties": {
+            "mapped_shell_names": {
+              "pwsh": "\uebc7",
+              "bash": "\uf17c"
+            }
+          }
+        },
+        {
+          "background": "#9A348E",
+          "foreground": "#ffffff",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": " {{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "background": "#DA627D",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "style": "agnoster_short"
+          },
+          "style": "powerline",
+          "template": " \uf114 {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "#FCA17D",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "branch_icon": "",
+            "fetch_stash_count": true,
+            "fetch_status": false,
+            "fetch_upstream_icon": true
+          },
+          "style": "powerline",
+          "template": " \ue725 {{ .HEAD }} ",
+          "type": "git"
+        },
+        {
+          "background": "#86BBD8",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        },
+        {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#ffffff",
+          "background": "#906cff",
+          "display_mode": "context",
+          "template": " \ue606 {{ if .Venv }}{{ .Venv }}{{ end }} "
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
